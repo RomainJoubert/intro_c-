@@ -13,14 +13,22 @@ namespace Helloworld.Tests
     {
         [TestMethod()]
         public void MessageTest()
-        {
-            Assert.Fail();
+        {          
         }
 
         [TestMethod()]
-        public void getHelloMessageTest()
+        public void getHelloMessageTest_bonsoir()
         {
-            Assert.Fail();
+            //Etant donné l'instanciation d'un nouveau message
+            Message test = new Message(9, 13, 18);
+
+            //Lorsque qu'on appelle getHelloMessage
+            DateTime date = new DateTime(2018,08,21,20,00,00);
+            String result = test.getHelloMessage(date);
+
+            //Alors l'utilisateur de l'ordinateur s'affiche
+            Assert.IsTrue(result.Contains("Bonsoir"));
+
         }
     }
 }

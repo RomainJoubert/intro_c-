@@ -13,8 +13,9 @@ namespace Helloworld
             do
             {
                 Message welcome = new Message(9, 13, 18);
-                welcome.getHelloMessage();
+                Console.WriteLine(welcome.getHelloMessage(DateTime.Now));
             } while (Console.ReadLine() != "exit");
+
         }
 
     }

@@ -20,31 +20,32 @@ namespace Helloworld
             this.evening = soir;
         }
 
-        public void getHelloMessage()
+        public String getHelloMessage(DateTime localTime)
         {
-
+            String message = String.Empty; //équivaut à écrire String message = "";
             String userName = System.Environment.UserName; //permet d'afficher le nom de l'utilisateur
-            DateTime localTime = DateTime.Now; //permet de récupérer la date et l'heure
+            //DateTime localTime = DateTime.Now; //permet de récupérer la date et l'heure
             DayOfWeek currentDay = DateTime.Today.DayOfWeek;
 
             if (currentDay == DayOfWeek.Saturday | currentDay == DayOfWeek.Sunday | (currentDay == DayOfWeek.Friday &localTime.Hour >= evening) | (currentDay == DayOfWeek.Monday & localTime.Hour <= morning))
             {
-                Console.WriteLine("Bon weekend " + userName + " vas-y mollo sur l'apéro!");
+                message = "Bon weekend " + userName + "\nNous sommes le : " + localTime.ToString("F") +
+                    " vas-y mollo sur l'apéro !";
             }
 
             else if (localTime.Hour > evening)
             {
-                Console.WriteLine("Bonsoir " + userName);
+                message = "Bonsoir " + userName + "\nNous sommes le : " + localTime.ToString("F");
             }
             else if (localTime.Hour < noon)
             {
-                Console.WriteLine("Bonjour " + userName);
+                message = "Bonjour " + userName + "\nNous sommes le : "  + localTime.ToString("F");
             }
             else
             {
-                Console.WriteLine("Bon après-midi " + userName + " et vas-y doucement sur la sieste !");
+                message = "Bon après-midi " + userName + "\nNous sommes le : " + localTime.ToString("F") + " et vas-y doucement sur la sieste !";
             }
-           
+            return message;
         }
     }
 }

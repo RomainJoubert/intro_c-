@@ -16,60 +16,60 @@ namespace Helloworld.Tests
         //{
         //}
 
-        [TestMethod()]
-        public void getHelloMessageTest_bonsoir()
-        {
-            //Etant donné l'instanciation d'un nouveau message
-            Message test = new Message(9, 13, 18);
+        //[TestMethod()]
+        //public void getHelloMessageTest_bonsoir()
+        //{
+        //    //Etant donné l'instanciation d'un nouveau message
+        //    Message test = new Message(9, 13, 18);
 
-            //Lorsque qu'on appelle getHelloMessage et que j'instancie une nouvelle date avec comme horaire 20h
-            DateTime date = new DateTime(2018, 08, 23, 20, 00, 00);
-            String result = test.getHelloMessage(date);
+        //    //Lorsque qu'on appelle getHelloMessage et que j'instancie une nouvelle date avec comme horaire 20h
+        //    DateTime date = new DateTime(2018, 08, 23, 20, 00, 00);
+        //    String result = test.getHelloMessage(date);
 
-            //Alors "Bonsoir" s'affiche
-            Assert.IsTrue(result.Contains("Bonsoir"));
+        //    //Alors "Bonsoir" s'affiche
+        //    Assert.IsTrue(result.Contains("Bonsoir"));
 
-        }
+        //}
 
-        [TestMethod()]
-        public void getHelloMessageTest_bonjour()
-        {
-            //Etant donné l'instanciation d'un nouveau message
-            Message test = new Message(9, 13, 18);
+        //[TestMethod()]
+        //public void getHelloMessageTest_bonjour()
+        //{
+        //    //Etant donné l'instanciation d'un nouveau message
+        //    Message test = new Message(9, 13, 18);
 
-            //Lorsque qu'on appelle getHelloMessage et que j'instancie une nouvelle date avec comme horaire 10h
-            DateTime date = new DateTime(2018, 08, 23, 10, 00, 00);
-            String result = test.getHelloMessage(date);
+        //    //Lorsque qu'on appelle getHelloMessage et que j'instancie une nouvelle date avec comme horaire 10h
+        //    DateTime date = new DateTime(2018, 08, 23, 10, 00, 00);
+        //    String result = test.getHelloMessage(date);
 
-            //Alors "Bonjour" s'affiche
-            Assert.IsTrue(result.Contains("Bonjour"));
-        }
+        //    //Alors "Bonjour" s'affiche
+        //    Assert.IsTrue(result.Contains("Bonjour"));
+        //}
 
-        [TestMethod()]
-        public void getHelloMessageTest_bonaprem()
-        {
-            //Etant donné l'instanciation d'un nouveau message
-            Message test = new Message(9, 13, 18);
+        //[TestMethod()]
+        //public void getHelloMessageTest_bonaprem()
+        //{
+        //    //Etant donné l'instanciation d'un nouveau message
+        //    Message test = new Message(9, 13, 18);
 
-            //Lorsque qu'on appelle getHelloMessage et que j'instancie une nouvelle date avec comme horaire 15h
-            DateTime date = new DateTime(2018, 08, 23, 15, 00, 00);
-            String result = test.getHelloMessage(date);
+        //    //Lorsque qu'on appelle getHelloMessage et que j'instancie une nouvelle date avec comme horaire 15h
+        //    DateTime date = new DateTime(2018, 08, 23, 15, 00, 00);
+        //    String result = test.getHelloMessage(date);
 
-            //Alors "Bonjour" s'affiche
-            Assert.IsTrue(result.Contains("Bon après-midi"));
+        //    //Alors "Bonjour" s'affiche
+        //    Assert.IsTrue(result.Contains("Bon après-midi"));
 
-        }
+        //}
 
 
         [TestMethod()]
         public void getHelloMessageTest_weekend()
         {
             //Etant donné l'instanciation d'un nouveau message
-            Message test = new Message(9, 13, 18);
+            Message test = new Message(new FakeDateTime());
 
             //Lorsque qu'on appelle getHelloMessage et que j'instancie une nouvelle date avec comme horaire 10h mais un samedi
-            DateTime date = new DateTime(2018, 08, 25, 10, 00, 00);
-            String result = test.getHelloMessage(date);
+            
+            String result = test.getHelloMessage();
 
             //Alors "Bonjour" s'affiche
             Assert.IsTrue(result.Contains("Bon weekend"));

@@ -25,7 +25,7 @@ namespace Helloworld
             String message = String.Empty; //équivaut à écrire String message = "";
             String userName = System.Environment.UserName; //permet d'afficher le nom de l'utilisateur
             //DateTime localTime = DateTime.Now; //permet de récupérer la date et l'heure
-            DayOfWeek currentDay = DateTime.Today.DayOfWeek;
+            DayOfWeek currentDay = localTime.DayOfWeek;
 
             if (currentDay == DayOfWeek.Saturday | currentDay == DayOfWeek.Sunday | (currentDay == DayOfWeek.Friday &localTime.Hour >= evening) | (currentDay == DayOfWeek.Monday & localTime.Hour <= morning))
             {
